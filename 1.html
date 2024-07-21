@@ -47,21 +47,36 @@
 </style>
 
 <style>
-    html {
-  --s: 4px; /* control the size*/
-  --c1: #000000;
-  --c2: #2ea8ff;
+    lhtml {
+  --s: 56px; /* control the size*/
+  --c1: #3fb8af;
+  --c2: #ff9e9d;
   
-  --g:#0000 66%,var(--c1) 68% 98%,#0000;
+  --_c1: var(--c1) 99%,#0000 101%;
+  --_c2: var(--c2) 99%,#0000 101%;
+  
+  --r:calc(var(--s)*.866); 
+  --g0:radial-gradient(var(--s),var(--_c1));
+  --g1:radial-gradient(var(--s),var(--_c2));
+  --f:radial-gradient(var(--s) at calc(100% + var(--r)) 50%,var(--_c1));
+  --p:radial-gradient(var(--s) at 100% 50%,var(--_c2));
   background:
-    radial-gradient(30% 30% at 0%   30%,var(--g))
-     var(--s) calc(9*var(--s)),
-    radial-gradient(30% 30% at 100% 30%,var(--g))
-     var(--s) calc(-1*var(--s)),
-    radial-gradient(30% 30% at 30% 100%,var(--g))
-     calc(10*var(--s)) 0,
-    radial-gradient(30% 30% at 30% 0%  ,var(--g))
-     var(--c2);
-  background-size: calc(20*var(--s)) calc(20*var(--s));
+    var(--f) 0 calc(-5*var(--s)/2),
+    var(--f) calc(-2*var(--r)) calc(var(--s)/2),
+    var(--p) 0 calc(-2*var(--s)),
+    var(--g0) var(--r) calc(-5*var(--s)/2),
+    var(--g1) var(--r) calc( 5*var(--s)/2),
+    radial-gradient(var(--s) at 100% 100%,var(--_c1)) 0 calc(-1*var(--s)),   
+    radial-gradient(var(--s) at 0%   50% ,var(--_c1)) 0 calc(-4*var(--s)),
+    var(--g1) calc(-1*var(--r)) calc(-7*var(--s)/2),
+    var(--g0) calc(-1*var(--r)) calc(-5*var(--s)/2),
+    var(--p) calc(-2*var(--r)) var(--s),
+    var(--g0) calc(-1*var(--r)) calc(var(--s)/ 2),
+    var(--g1) calc(-1*var(--r)) calc(var(--s)/-2),
+    var(--g0) 0 calc(-1*var(--s)),
+    var(--g1) var(--r) calc(var(--s)/-2),
+    var(--g0) var(--r) calc(var(--s)/ 2) 
+    var(--c2);
+  background-size: calc(4*var(--r)) calc(6*var(--s));
 }
 </style>
