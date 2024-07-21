@@ -62,5 +62,31 @@ body{background-color:#fff}
         animation-delay: 1.15s;
     }
     
-    
+    .pg-stop-animation {
+  animation: none !important;
+  transition: none !important;
+}
+
+@keyframes progressLinearMovement {
+  0% {
+    opacity: 1;
+    left: -100%;
+  }
+  
+  50% {
+    opacity: 1;
+    left: 100%;
+  }
+
+  100% {
+    opacity: 0;
+    left: 100%;
+  }
+}
+
+
+
+
+
+
 </style>
